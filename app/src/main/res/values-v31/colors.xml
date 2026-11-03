@@ -1,0 +1,5 @@
+<resources>
+    <color name="dyn_bg">@android:color/system_accent1_50</color>
+    <color name="dyn_text">@android:color/system_accent1_900</color>
+    <color name="dyn_author">@android:color/system_accent1_600</color>
+</resources>

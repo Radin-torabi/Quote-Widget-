@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="30sp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Live preview on a wallpaper-like backdrop -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/preview_frame"
+                android:padding="18dp">
+
+                <FrameLayout
+                    android:id="@+id/preview_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/btn_next"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Show next quote" />
+
+            <TextView style="@style/SectionHeader" android:text="Quote bank" />
+
+            <EditText
+                android:id="@+id/quotes_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|start"
+                android:hint="@string/quotes_hint"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine|textCapSentences"
+                android:maxLines="14"
+                android:minLines="8"
+                android:scrollbars="vertical"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/quote_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:alpha="0.7" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btn_paste"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paste (replace)" />
+                <Button
+                    android:id="@+id/btn_append"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paste (add)" />
+                <Button
+                    android:id="@+id/btn_clear"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Clear" />
+            </LinearLayout>
+
+            <TextView style="@style/SettingLabel" android:text="How are quotes separated?" />
+            <Spinner android:id="@+id/sp_split" style="@style/SettingSpinner" />
+
+            <TextView style="@style/SectionHeader" android:text="Rotation" />
+
+            <TextView style="@style/SettingLabel" android:text="Change quote every" />
+            <Spinner android:id="@+id/sp_interval" style="@style/SettingSpinner" />
+
+            <Switch android:id="@+id/sw_shuffle" style="@style/SettingSwitch"
+                android:text="Shuffle (random order, no repeats until all shown)" />
+
+            <TextView style="@style/SettingLabel" android:text="When I tap the widget" />
+            <Spinner android:id="@+id/sp_tap" style="@style/SettingSpinner" />
+
+            <TextView style="@style/SectionHeader" android:text="Look" />
+
+            <TextView style="@style/SettingLabel" android:text="Style" />
+            <Spinner android:id="@+id/sp_theme" style="@style/SettingSpinner" />
+
+            <TextView android:id="@+id/lbl_opacity" style="@style/SettingLabel" />
+            <SeekBar android:id="@+id/sb_opacity" style="@style/SettingSeek" android:max="100" />
+
+            <TextView style="@style/SettingLabel" android:text="Font" />
+            <Spinner android:id="@+id/sp_font" style="@style/SettingSpinner" />
+
+            <TextView android:id="@+id/lbl_size" style="@style/SettingLabel" />
+            <SeekBar android:id="@+id/sb_size" style="@style/SettingSeek" android:max="30" />
+
+            <TextView style="@style/SettingLabel" android:text="Alignment" />
+            <Spinner android:id="@+id/sp_align" style="@style/SettingSpinner" />
+
+            <Switch android:id="@+id/sw_author" style="@style/SettingSwitch" android:text="Show author" />
+            <Switch android:id="@+id/sw_marks" style="@style/SettingSwitch" android:text="Wrap in quotation marks" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:alpha="0.6"
+                android:textSize="13sp"
+                android:text="Tip: if quotes stop changing, go to Settings › Apps › Quote Widget › Battery and choose Unrestricted. One UI may otherwise put the app to sleep." />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp">
+        <Button
+            android:id="@+id/btn_pin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="Add to home screen" />
+        <Button
+            android:id="@+id/btn_done"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Save" />
+    </LinearLayout>
+</LinearLayout>

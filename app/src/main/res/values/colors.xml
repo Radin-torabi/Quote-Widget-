@@ -1,0 +1,8 @@
+<resources>
+    <color name="auto_bg">#FFFFFFFF</color>
+    <color name="auto_text">#FF1B1B1F</color>
+    <color name="auto_author">#FF5E5E66</color>
+    <color name="dyn_bg">@color/auto_bg</color>
+    <color name="dyn_text">@color/auto_text</color>
+    <color name="dyn_author">@color/auto_author</color>
+</resources>
